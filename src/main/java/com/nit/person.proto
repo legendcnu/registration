@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package proto;
+
+option java_multiple_files = true;
+//option java_package = "com.kstl";
+
+/*
+ multi line comments
+*/
+message Person{
+//name field single line comments
+	string name=1;
+	int32 age=2;
+	Address address = 3;
+  repeated Car car = 4;
+	}
+	
+	message Address {
+  int32 postbox = 1;
+  string street = 2;
+  string city = 3;
+}
+
+message Car {
+  string make = 1;
+  string model = 2;
+  int32 year = 3;
+  BodyStyle body_style = 4;
+}
+
+enum BodyStyle {
+  UNKNOWN = 0;
+  SEDAN = 1;
+  COUPE = 2;
+  SUV = 3;
+}
